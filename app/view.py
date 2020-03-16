@@ -63,8 +63,6 @@ def statistic():
                 address = stat[0]
                 sum = stat[2]
             statistic_with_sum.append((stat, sum))
-        for st in statistic_with_sum:
-            print(st)
     return render_template('statistic.html', statistics=statistic_with_sum)
 
 
