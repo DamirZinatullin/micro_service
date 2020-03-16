@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+Задание на кладку
+{% endblock %}
+{% block content %}
+<div class="col-md-6">
+    <form action="{{ url_for('add_bricks', id=id) }}" method="POST">
+        {% for field in form %}
+        <div class="form-group">
+            {{ field.label(class='control-label') }}
+            {{ field(class='form-control')  }}
+        </div>
+        {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <button type="submit" class="btn btn-success">Создать</button>
+    </form>
+</div>
+{% endblock %}
+

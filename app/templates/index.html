@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Адрес</th>
+        <th scope="col">Год постройки</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for house in houses %}
+    <tr>
+        <td><a href="">{{ house[1] }}</a></td>
+        <td>{{ house[2] }}</td>
+        <td><a href="{{ url_for('add_bricks', id=house[0]) }}">Задание на кладку кирпичей</a>
+        </td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Адрес</th>
+        <th scope="col">Дата</th>
+        <th scope="col">Кол. кирп., привезенных в дом в эту дату</th>
+        <th scope="col">Суммарное кол-во кирп. в доме на эту дату</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for st in statistics %}
+    <tr>
+        <th scope="row">{{ st[0][0] }}</th>
+        <td><a href="">{{ st[0][1] }}</a></td>
+        <td>{{ st[0][2] }}</td>
+        <td>{{ st[1] }}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}
